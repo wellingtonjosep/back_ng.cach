@@ -25,6 +25,9 @@ CREATE TABLE "transactions" (
 CREATE UNIQUE INDEX "users_id_key" ON "users"("id");
 
 -- CreateIndex
+CREATE UNIQUE INDEX "users_username_key" ON "users"("username");
+
+-- CreateIndex
 CREATE UNIQUE INDEX "users_accountId_key" ON "users"("accountId");
 
 -- CreateIndex
