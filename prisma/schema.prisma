@@ -35,8 +35,8 @@ model Transaction {
   creditedAccountId String
   createdAt DateTime @default(now())
 
-  debited Account @relation(name: "Debited", fields: [debitedAccountId], references: [id])
-  credited Account @relation(name: "Credited", fields: [creditedAccountId], references: [id])
+  debited Account @relation(name: "Debited", fields: [debitedAccountId], references: [id], onDelete: Cascade)
+  credited Account @relation(name: "Credited", fields: [creditedAccountId], references: [id], onDelete: Cascade)
   
   @@map("transactions")
 }
