@@ -2,6 +2,7 @@ import { Router } from "express";
 
 import userCreateController from "../controllers/user/userCreate.controller";
 import userLoginController from "../controllers/user/userLogin.controller";
+import userCaptureController from "../controllers/user/userCapture.controller";
 
 import accountBalanceController from "../controllers/account/accountBalance.controller";
 
@@ -17,6 +18,7 @@ const router = Router();
 
 export default router;
 
+router.get("/users", verifyTokenMiddleware, userCaptureController)
 router.post("/users", verifyUserMiddleware ,userCreateController)
 router.get("/users/balance", verifyTokenMiddleware ,accountBalanceController)
 router.post("/users/login", verifyLoginMiddleware, userLoginController)
