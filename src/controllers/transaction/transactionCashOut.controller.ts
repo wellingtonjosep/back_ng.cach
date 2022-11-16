@@ -12,7 +12,6 @@ const transactionCashOutController = async (req: Request, res: Response) => {
     
         return res.json(response)
     } catch (err) {
-        console.log(err)
         if (err instanceof Error) {
             handleError(err, res)
         }
